@@ -3,8 +3,8 @@ import Cards from "./component/Cards";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import "./App.css";
-import sad from "./assets/sad.jpeg";
-import happy from "./assets/happy.jpeg";
+import sad from "./assets/sad.png";
+import happy from "./assets/happy.png";
 
 const App = () => {
   return (
