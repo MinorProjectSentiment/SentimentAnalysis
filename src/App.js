@@ -6,6 +6,8 @@ import sad from "./assets/sad.png";
 import happy from "./assets/happy.png";
 import SearchBar from "./component/SearchBar";
 import MyContext from "./context/MyContext";
+import BarGraph from "./component/BarGraph";
+import CircularProgress from "./component/Circular_progressbar";
 
 
 const App = () => {
@@ -19,8 +21,9 @@ const App = () => {
         <h1 style={{ textAlign: "center" }}>
           Sentiment analysis of a paragraph
         </h1>
-        <SearchBar/>
-        
+        {/* <SearchBar/> */}
+        {/* <BarGraph/> */}
+        {/* <CircularProgress percentage={75} /> */}
       </div>
     </>
   );
