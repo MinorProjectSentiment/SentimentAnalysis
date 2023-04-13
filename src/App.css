@@ -1,3 +1,54 @@
 body{
-    background-color:#a7d5e896;
+    /* background-color:#a7d5e896;
+     */
+     background-image: url('./assets/bg.jpg');
+     background-size:cover;
+     background-repeat: no-repeat;
+     background-position: center center;
+     height: 90vh;
 }
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: #0D51FF !important;
+    stroke-linecap:square !important;
+    transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+    stroke: none !important;
+    stroke-linecap: round;
+    fill-opacity: 0.1;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+    fill: #000 !important;
+    font-size: 10px !important;
+    /* dominant-baseline: middle; */
+    text-anchor: middle;
+}
+.bar:nth-of-type(1) {
+fill: #B96005;
+}
+
+.bar:nth-of-type(2){
+fill: #BC1B03;
+}
+
+.bar:nth-of-type(3){
+fill: #000;
+}
+
+.bar:nth-of-type(4){
+fill: #099CB9;
+}
+.bar:nth-of-type(5){
+    fill: #1AE708;
+}
+.bar{
+    width: 25px;
+}
+
+.tick{
+    font-size: 12px;
+}
+

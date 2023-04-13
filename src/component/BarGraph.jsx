@@ -1,28 +1,35 @@
-import React from 'react';
-import BarChart  from 'react-bar-chart';
+import React from "react";
+import BarChart from "react-bar-chart";
 
-const data = [
-  { text: 'January', value: 12 },
-  { text: 'February', value: 19 },
-  { text: 'March', value: 3 },
-  { text: 'April', value: 5 },
-  { text: 'May', value: 2 },
-  { text: 'June', value: 3 },
-];
+const margin = { top: 10, right: 20, bottom: 30, left: 40 };
 
-const BarGraph = () => {
+const BarGraph = (props) => {
+  const data = [
+    {
+      text: props.data[0].model.split(" ")[0],
+      value: props.data[0].confidence,
+    },
+    {
+      text: props.data[1].model.split(" ")[0],
+      value: props.data[1].confidence,
+    },
+    {
+      text: props.data[2].model.split(" ")[0],
+      value: props.data[2].confidence,
+    },
+    {
+      text: props.data[3].model.split(" ")[0],
+      value: props.data[3].confidence,
+    },
+    {
+      text: props.data[4].model.split(" ")[0],
+      value: props.data[4].confidence,
+    },
+  ];
+
   return (
-    <div>
-      <h2>Bar Chart</h2>
-      {/* <BarChart/> */}
-      <BarChart
-        width={500}
-        height={300}
-        margin={{ top: 20, right: 20, bottom: 30, left: 40 }}
-        data={data}
-        yAxisLabel="Sales"
-        xAxisLabel="Month"
-      />
+    <div style={{ marginTop: "20%" }}>
+      <BarChart  width={297} height={265} margin={margin} data={data} />
     </div>
   );
 };
