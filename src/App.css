@@ -52,3 +52,9 @@ fill: #099CB9;
     font-size: 12px;
 }
 
+.input-search::placeholder{
+    color:  #192FC8;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}

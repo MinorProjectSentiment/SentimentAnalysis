@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BsSearch } from "react-icons/bs";
+import { BsArrowRightShort } from "react-icons/bs";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 
@@ -21,18 +21,25 @@ const SearchBar = () => {
   function handleSubmit(event) {
     console.log("submit");
     event.preventDefault();
-
-    axios
-      .post("http://localhost:5000/predict_sentiment", formData)
-      .then((response) => {
-        localStorage.removeItem("Result");
-        localStorage.setItem("Result", JSON.stringify(response.data.results));
-        navigate("/result");
-      })
-      .catch((error) => {
-        console.log(error, "bla");
-      });
+    if (formData.text != '') {
+      axios
+        .post("http://localhost:5000/predict_sentiment", formData)
+        .then((response) => {
+          localStorage.removeItem("Result");
+          localStorage.setItem("Result", JSON.stringify(response.data.results));
+          navigate("/result");
+        })
+        .catch((error) => {
+          console.log(error, "bla");
+        });
+    }
+    else
+    {
+      navigate("/")
+    }
   }
+
+
 
   return (
     <>
@@ -40,26 +47,42 @@ const SearchBar = () => {
         onSubmit={handleSubmit}
         style={{
           display: "flex",
-          width: "50%",
           margin: "auto",
-          marginTop: "2%",
           justifyContent: "space-around",
+          flexDirection: "column",
         }}
       >
         <Form.Control
-        as="textarea" rows={6} 
+          as="textarea"
+          rows={6}
           type="text"
           placeholder="Enter text"
           aria-label="Text"
           name="text"
           value={formData.text}
           onChange={handleInputChange}
-          style={{ width: "95%" }}
+          className="input-search"
+          style={{ width: "858px",height:'112px' ,borderRadius:'0px 30px', backgroundColor:'#DDDEE5'}}
         />
-        <BsSearch
-          style={{ fontSize: "20px", margin: "auto", cursor: "pointer" , color:'#fff'}}
+        <div
+          style={{
+            display: "flex",
+            width: "208px",
+            height: "60px",
+            borderRadius: "0px 30px",
+            backgroundColor: "#192fc8b5",
+            justifyContent: "center",
+            margin: "7% auto",
+            padding: "7px",
+            cursor: "pointer",
+          }}
           onClick={handleSubmit}
-        />
+        >
+          <h1 style={{ fontSize: "30px", fontWeight: "400", color: "#fff" }}>
+            Analyse
+          </h1>
+          <BsArrowRightShort style={{ color: "#fff", fontSize: "35px" }} />
+        </div>
       </Form>
     </>
   );

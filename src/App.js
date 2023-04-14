@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import SearchBar from "./component/SearchBar";
 import Result from "./pages/Result";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SearchBar />}>
+        <Route path="/" element={<Home/>}>
         </Route>
         <Route path="/result" element={<Result />}>
         </Route>
